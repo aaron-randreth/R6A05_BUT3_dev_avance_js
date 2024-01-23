@@ -1,0 +1,17 @@
+{
+  "name": "td1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/sysinfo.js",
+    "dev": "node --watch src/server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Aaron Randreth",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  }
+}
