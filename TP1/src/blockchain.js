@@ -1,9 +1,10 @@
 import {createBlock, findBlocks, verifyBlocks, findBlock} from "./blockchainStorage.js";
 import {json} from "node:stream/consumers"
+import {parse} from 'url';
 
 export async function find_by_id(req, res, url){
-    console.log(req)
-    return findBlock(url.pathname.split('/').pop())
+    const id = parse(req.url, true).query.id
+    return findBlock(id)
 }
 
 export async function verify(){

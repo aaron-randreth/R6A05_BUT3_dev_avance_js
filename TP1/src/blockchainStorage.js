@@ -31,15 +31,19 @@ export async function findBlocks() {
 
 /**
  * Trouve un block à partir de son id
- * @param partialBlock
- * @return {Promise<Block[]>}
+ * @param id
+ * @return {Promise<Block|null}
  */
-export async function findBlock(partialBlock) {
-    if (!await verifyBlocks())
-        return {integrity: false}
-
+export async function findBlock(id) {
     const blocks = await findBlocks()
-    return blocks.findLast(block => block.id === partialBlock.id)
+    const res = blocks.findLast(block => block.id === id)
+
+    if (res == null)
+        return null
+
+    res.integrity = await verifyBlocks()
+
+    return res
 }
 
 /**

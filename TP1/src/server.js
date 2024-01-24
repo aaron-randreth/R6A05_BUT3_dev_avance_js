@@ -24,6 +24,18 @@ createServer(async (req, res) => {
                     break
                 case 'GET:/blockchain/block':
                     results = await find_by_id(req, res, url)
+
+                    if (results != null){
+                        break
+                    }
+
+                    res.writeHead(404)
+                    results = {
+                        error : {
+                            message: "Block not found"
+                        }
+                    }
+
                     break
                 case 'POST:/blockchain':
                     results = await create(req, res)
