@@ -4,6 +4,7 @@
 - L'API REST répond aux  verbes `GET` et `POST`
 - La sauvegarde des dons s'effectue dans le fichier `blockchain.json`
 - Tous les traitements s'effectuent en asynchrone à travers des `Promises`.
+- `npm run reset` permet de réinitialiser la Blockchain
 
 ## Description de l'API
 
@@ -12,18 +13,32 @@
 
 ### GET
 
-Lister tous les Dons
+#### Lister tous les Dons
 
 ```shell
 curl --request GET 'http://localhost:3000/blockchain'
 ```
 
+#### Verifier l'intégrité de la Blockchain 
+
+```sh
+curl -X GET 'http://localhost:3000/blockchain/integrity'
+```
+
+#### Trouver un block avec son id
+
+```sh
+curl -X GET 'http://localhost:3000/blockchain/block?id=uuid'
+```
+
 ### POST
 
-Créer un nouveau bloc. Sa composition est fourni en json :
+#### Créer un nouveau bloc. 
+
+Sa composition est fourni en json :
 `{
 "nom": "Nom de la personne",
-"somme": 1234
+"don": 1234
 }`
 
 L'identifiant du don est généré automatiquement au format uuid. La date (`timestamp`) est mise
@@ -34,7 +49,7 @@ la valeur `hash` est déterminée à partir de la variable `unSecret`.
 ```shell
 curl --request POST 'http://localhost:3000/blockchain' --header 'Content-Type: application/json' --data-raw '{
    "nom": "Alan Turing",
-   "somme": 4567
+   "don": 4567
 }'
 ```
 L'enregistrement résultant pourrait ressemble à ceci :
@@ -46,3 +61,4 @@ L'enregistrement résultant pourrait ressemble à ceci :
 "hash": "b28c94b2195c8ed259f0b415aaee3f39b0b2920a4537611499fa044956917a21"
 }`
 
+## Compte rendu 

@@ -10,7 +10,7 @@
     "dev": "node --watch src/server.js"
   },
   "keywords": [],
-  "author": "Laurent Giustignano",
+  "author": "Aaron Randreth, Laurent Giustignano",
   "license": "ISC",
   "dependencies": {
     "uuid": "^9.0.1"
