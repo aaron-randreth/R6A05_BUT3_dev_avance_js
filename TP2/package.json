@@ -1,0 +1,20 @@
+{
+  "name": "lesmarvels",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "@fastify/view": "^8.2.0",
+    "fastify": "^4.26.0",
+    "handlebars": "^4.7.8"
+  }
+}
