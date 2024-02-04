@@ -1,0 +1,29 @@
+{{> header}}
+
+<div class="container-fluid m-2 p-5 bg-primary text-center">
+    <h1>Les Marvels</h1>
+</div>
+
+<div class="container m-2 p-5 bg-primary  text-center">
+    <h2>Mes comics</h2>
+
+    <div class="d-grid justify-content-center gap-3">
+        {{#each personnes}}
+            <div class="card" style="width: 18rem;">
+              <img 
+                class="card-img-top" 
+                src="{{imageUrl}}" 
+                alt="Thumbnail de {{name}}">
+              <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                {{#if description}}
+                    <p class="card-text">{{description}}</p>
+                {{/if}}
+              </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+
+{{> footer}}
