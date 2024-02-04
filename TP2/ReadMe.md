@@ -1,8 +1,15 @@
-# Serveur NodeJS : Les Marvels
+# Rapport 
 
-- Connexion avec l'API [developer.marvel.com](https://developer.marvel.com)
-- Configuration de Postman et pré-script pour une API privée
-- Utilisation de @Fastify/view et Handlebars
-- Dockerisation d'une application NodeJS.
+## Build l'image et lancer le container 
 
+```Sh
+docker build . -t img
+docker run -p 8080:3000 img
+```
 
+```Sh
+docker ps -a
+
+docker stop container_id
+docker rm container_id
+```

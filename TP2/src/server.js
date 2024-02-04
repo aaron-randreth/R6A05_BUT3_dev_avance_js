@@ -20,10 +20,7 @@ app.register(fastify_view, {
 })
 
 app.get('/', async (req, res) => {
-  //res.headers({'Content-Type': 'application/json'})
-  //res.code(200)
-  //res.send())
   return res.view('/views/templates/index.hbs', {personnes: await getData("http://gateway.marvel.com" + "/v1/public/characters")})
 })
 
-app.listen({ port: 3000 })
+app.listen({host: "0.0.0.0", port: 3000 })
