@@ -12,9 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^3.3.2",
     "@fastify/view": "^8.2.0",
+    "dotenv": "^16.4.1",
     "fastify": "^4.26.0",
-    "handlebars": "^4.7.8"
+    "handlebars": "^4.7.8",
+    "node-fetch": "^3.3.2"
   }
 }

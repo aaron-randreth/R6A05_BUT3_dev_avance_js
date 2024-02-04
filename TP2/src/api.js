@@ -1,6 +1,8 @@
 import {createHash} from 'node:crypto';
 import fetch from 'node-fetch'
 
+import 'dotenv/config'
+
 /**
  * Récupère les données de l'endpoint en utilisant les identifiants
  * particuliers developer.marvels.com
@@ -10,10 +12,10 @@ import fetch from 'node-fetch'
 export const getData = async (url) => {
 
     const query_url = new URL(url)
-    
-    const public_key = "47dc1f5314fd439517856a4c37f79b60"
-    const private_key = "1af2a45542f1960a69ea59923a1b7d45273d987f"
     const timestamp = Date.now().toString();
+
+    const public_key = process.env.PUB_KEY
+    const private_key = process.env.PRIV_KEY
 
     const hash = getHash(public_key, private_key, timestamp)
 
